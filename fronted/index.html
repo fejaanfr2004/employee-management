@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>EMS<span>.</span></h2>
+            <p class="sidebar-label">MAIN MENU</p>
+
+            <nav>
+                <a href="#" class="nav-link active" data-filter="all">
+                    Dashboard
+                </a>
+                <a href="#" class="nav-link" data-filter="active">
+                    Active Employees
+                </a>
+                <a href="#" class="nav-link" data-filter="deleted">
+                    Deleted Employees
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                Employee Management System
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header class="topbar">
+                <div>
+                    <h1>Employee Dashboard</h1>
+                    <p>Manage your employees in one place.</p>
+                </div>
+
+                <button class="add-btn" id="openModal">
+                    + Add Employee
+                </button>
+            </header>
+
+            <!-- Statistics -->
+            <section class="stats">
+
+                <div class="stat-card">
+                    <p>Total Employees</p>
+                    <h2 id="totalCount">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Active Employees</p>
+                    <h2 id="activeCount">0</h2>
+                </div>
+
+                <div class="stat-card">
+                    <p>Deleted Employees</p>
+                    <h2 id="deletedCount">0</h2>
+                </div>
+
+            </section>
+
+            <!-- Employee Table -->
+            <section class="employee-section">
+
+                <div class="table-header">
+                    <div>
+                        <h2>Employee Records</h2>
+                        <p>View and manage employee information.</p>
+                    </div>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search employees..."
+                    >
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>City</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="employeeTable">
+                            <tr>
+                                <td colspan="7">Loading employees...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+            <p id="message"></p>
+
+        </main>
+    </div>
+
+    <!-- Add Employee Modal -->
+    <div class="modal" id="employeeModal">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2>Add New Employee</h2>
+                <button id="closeModal" class="close-btn">&times;</button>
+            </div>
+
+            <form id="employeeForm">
+
+                <label for="name">Employee Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Enter employee name"
+                    required
+                >
+
+                <label for="age">Age</label>
+                <input
+                    type="number"
+                    id="age"
+                    name="age"
+                    min="18"
+                    max="100"
+                    placeholder="Enter age"
+                    required
+                >
+
+                <label for="city">City</label>
+                <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    placeholder="Enter city"
+                    required
+                >
+
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter email"
+                    required
+                >
+
+                <button type="submit" class="submit-btn">
+                    Save Employee
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
