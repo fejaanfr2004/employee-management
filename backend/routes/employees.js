@@ -4,7 +4,7 @@ const db = require("../config/db");
 
 // Get all employees
 router.get("/", (req, res) => {
-    db.query("SELECT * FROM employees", (err, result) => {
+    db.query("SELECT * FROM employees order by id desc", (err, result) => {
         if (err) return res.status(500).json(err);
         res.json(result);
     });

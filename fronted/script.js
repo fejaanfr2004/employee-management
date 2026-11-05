@@ -117,14 +117,15 @@ function displayEmployees() {
         `;
         return;
     }
-
+        var sr = 1;
     employeeTable.innerHTML = filteredEmployees.map(emp => {
 
         const isDeleted = emp.deleted != null;
 
         return `
             <tr>
-                <td>${escapeHTML(emp.id)}</td>
+                <td>${sr++}</td>
+                
                 <td>${escapeHTML(emp.name)}</td>
                 <td>${escapeHTML(emp.age)}</td>
                 <td>${escapeHTML(emp.city)}</td>
